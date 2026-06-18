@@ -1,0 +1,10 @@
+[project]
+name = "documind-ai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "docx2txt>=0.9",
+    "streamlit>=1.58.0",
+]

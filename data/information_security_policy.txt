@@ -1,0 +1,21 @@
+Information Security Policy
+
+Employees must use multi-factor authentication for company accounts.
+
+Passwords must be changed every 90 days.
+
+Sharing credentials is strictly prohibited.
+
+Sensitive company data must not be stored on personal devices.
+
+All security incidents must be reported within 24 hours.
+
+Employees must lock their systems when away from their desks.
+
+Downloading unauthorized software is not permitted.
+
+USB devices should not be connected without approval.
+
+Phishing emails should be reported immediately.
+
+Violations of security policies may result in disciplinary action.
