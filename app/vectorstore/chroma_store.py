@@ -15,8 +15,7 @@ def create_vector_store():
 
     vector_store = Chroma.from_documents(
         documents=chunks,
-        embedding=embedding_model,
-        persist_directory="vector_db"
+        embedding=embedding_model
     )
 
     return vector_store
@@ -24,7 +23,7 @@ def create_vector_store():
 
 if __name__ == "__main__":
 
-    vector_store = create_vector_store()
+    st.session_state.vector_store = create_vector_store()
 
     print("\nVector Store Created Successfully!")
 
