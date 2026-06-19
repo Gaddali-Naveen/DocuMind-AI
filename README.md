@@ -1,25 +1,29 @@
-# DocuMind-AI
-Built DocuMind-AI, a Retrieval-Augmented Generation (RAG) powered document assistant.
-
 # 🧠 DocuMind AI
 
-Turn Documents into Conversations with AI.
+### Enterprise Document Intelligence Assistant powered by LangChain, FAISS, Groq & Hugging Face
 
-DocuMind AI is an intelligent Retrieval-Augmented Generation (RAG) application that allows users to upload documents and ask natural language questions. The system retrieves relevant information from the uploaded documents and generates accurate responses using Groq LLMs.
+DocuMind AI is an end-to-end Retrieval-Augmented Generation (RAG) application that enables users to upload documents and interact with them through natural language conversations. The system processes PDF, DOCX, and TXT files, generates vector embeddings, retrieves relevant context using semantic search, and provides accurate answers using a Large Language Model.
 
 ---
 
-## 🚀 Features
+## 🚀 Live Demo
 
-* 📄 Upload TXT, PDF, and DOCX files
-* 🔍 Semantic Search using ChromaDB
-* 🧠 HuggingFace Embeddings
-* ⚡ Groq LLM Integration
-* 💬 Conversational Chat Interface
-* 📚 Multi-Document Question Answering
-* 📝 Source Citation Display
-* 🎨 Modern Streamlit UI
-* 🔄 Automatic Vector Store Creation
+🌐 https://documentai-assistant-l5wrzbxtxckpaajqxgylet.streamlit.app/
+
+---
+
+## ✨ Features
+
+* 📄 Upload TXT, PDF, and DOCX documents
+* 🔍 Semantic Search using FAISS Vector Store
+* 🤖 AI-Powered Question Answering with Groq LLM
+* 🧠 Conversational Memory Support
+* 📚 Retrieval-Augmented Generation (RAG)
+* ⚡ Fast Document Processing
+* 🌐 Interactive Streamlit Web Interface
+* ☁️ Deployed on Streamlit Cloud
+* 📂 Multi-Document Support
+* 🔗 Source Document Tracking
 
 ---
 
@@ -27,80 +31,71 @@ DocuMind AI is an intelligent Retrieval-Augmented Generation (RAG) application t
 
 ```text
 User Uploads Documents
-           │
-           ▼
+          │
+          ▼
 Document Loader
-           │
-           ▼
+          │
+          ▼
 Text Chunking
-           │
-           ▼
-HuggingFace Embeddings
-           │
-           ▼
-ChromaDB Vector Store
-           │
-           ▼
+          │
+          ▼
+Hugging Face Embeddings
+          │
+          ▼
+FAISS Vector Store
+          │
+          ▼
 Retriever
-           │
-           ▼
-Groq LLM
-           │
-           ▼
-Final Answer + Sources
+          │
+          ▼
+Groq LLM (Llama 3.3 70B)
+          │
+          ▼
+Final Response
 ```
 
----
-
 ## 🛠️ Tech Stack
+
+### AI & RAG
+
+* LangChain
+* FAISS
+* Hugging Face Embeddings
+* Groq (Llama 3.3 70B)
 
 ### Frontend
 
 * Streamlit
 
-### Backend
+### Programming Language
 
 * Python
 
-### LLM
+### Document Processing
 
-* Groq
-
-### Embeddings
-
-* HuggingFace Sentence Transformers
-
-### Vector Database
-
-* ChromaDB
-
-### Framework
-
-* LangChain
+* PyPDF
+* Docx2txt
 
 ---
 
-## 📂 Project Structure
+## 📂 Supported Document Types
 
-```text
-DocuMind-AI
-│
-├── app
-│   ├── embeddings
-│   ├── frontend
-│   ├── ingestion
-│   ├── llm
-│   ├── memory
-│   ├── prompting
-│   ├── retrieval
-│   ├── vectorstore
-│   └── rag_pipeline.py
-│
-├── data
-├── requirements.txt
-├── .env.example
-└── README.md
-```
+* TXT Files
+* PDF Files
+* DOCX Files
+
+---
+
+## 📸 Application Preview
+
+Upload documents and ask questions directly from your knowledge base.
+
+Example Queries:
+
+* Summarize the leave policy
+* Explain employee benefits
+* What is the travel reimbursement process?
+* What are the onboarding guidelines?
 
 ---
 
@@ -110,6 +105,7 @@ DocuMind-AI
 
 ```bash
 git clone https://github.com/Gaddali-Naveen/DocuMind-AI.git
+
 cd DocuMind-AI
 ```
 
@@ -121,8 +117,16 @@ python -m venv .venv
 
 ### Activate Environment
 
+#### Windows
+
 ```bash
 .venv\Scripts\activate
+```
+
+#### Linux / Mac
+
+```bash
+source .venv/bin/activate
 ```
 
 ### Install Dependencies
@@ -151,35 +155,70 @@ streamlit run app/frontend/app.py
 
 ---
 
-## 📸 Demo Questions
+## 📁 Project Structure
 
-* What is the password policy?
-* How many annual leave days are provided?
-* Can annual leave be carried forward?
-* What health benefits are available?
-* What is the remote work policy?
+```text
+DocuMind-AI
+│
+├── app
+│   ├── embeddings
+│   ├── frontend
+│   ├── ingestion
+│   ├── llm
+│   ├── prompting
+│   ├── vectorstore
+│   ├── rag_pipeline.py
+│
+├── data
+│
+├── requirements.txt
+│
+├── README.md
+│
+└── .env
+```
 
 ---
 
-## 🎯 Future Improvements
+## 🎯 Use Cases
 
-* Hybrid Search (BM25 + Vector Search)
+* Enterprise Knowledge Base
+* HR Policy Assistant
+* Internal Documentation Search
+* Employee Support Assistant
+* Customer Support Knowledge Retrieval
+* Company Document Q&A
+
+---
+
+## 📈 Future Enhancements
+
+* Multi-User Authentication
+* Chat Export Feature
 * Conversation Persistence
-* User Authentication
-* Cloud Deployment
-* Multi-User Support
-* Document Management Dashboard
+* Hybrid Search (FAISS + BM25)
+* Source Highlighting
+* PDF Page-Level Citations
+* Cloud Storage Integration
 
 ---
 
 ## 👨‍💻 Author
 
-**Gaddali Naveen**
+**Gaddali Naveen Babu**
 
-B.Tech Artificial Intelligence & Data Science
+Final Year B.Tech (Artificial Intelligence & Data Science)
 
-Aspiring AI Engineer | GenAI Enthusiast | Data Engineer
+Passionate about AI Engineering, Retrieval-Augmented Generation (RAG), LLM Applications, and Intelligent Systems.
+
+GitHub:
+https://github.com/Gaddali-Naveen
+
+LinkedIn:
+https://www.linkedin.com/in/gaddali-naveen-babu/
 
 ---
 
-⭐ If you found this project useful, consider giving it a star.
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
