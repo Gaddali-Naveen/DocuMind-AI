@@ -1,6 +1,5 @@
 import sys
 from pathlib import Path
-import shutil
 
 import streamlit as st
 
@@ -10,7 +9,7 @@ if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
 from app.rag_pipeline import ask_question
-from app.vectorstore.chroma_store import create_vector_store
+from app.vectorstore.faiss_store import create_vector_store
 
 
 # --------------------------------------------------
@@ -164,21 +163,12 @@ with st.sidebar:
 
                     f.write(file.getbuffer())
 
-            if Path("vector_db").exists():
-                shutil.rmtree("vector_db")
-
             with st.spinner("Creating Embeddings..."):
 
                 st.session_state.vector_store = create_vector_store()
 
-                vector_store = st.session_state.vector_store
-
-                chunk_count = (
-                    vector_store._collection.count()
-                )
-
             st.success(
-                f"Successfully Processed! ({chunk_count} chunks)"
+                "Documents Processed Successfully!"
             )
 
         else:
@@ -195,7 +185,7 @@ with st.sidebar:
     st.success("PDF Support")
     st.success("DOCX Support")
     st.success("Groq LLM")
-    st.success("ChromaDB")
+    st.success("FAISS Vector Store")
     st.success("Chat Memory")
     st.success("Dynamic Prompting")
 
@@ -284,9 +274,8 @@ if question:
 
     for doc in docs:
 
-        sources.add(
-            doc.metadata["source"]
-        )
+        if "source" in doc.metadata:
+            sources.add(doc.metadata["source"])
 
     source_text = "\n".join(
         [
@@ -330,7 +319,7 @@ st.markdown("""
 
 <br><br>
 
-Built with ❤️ using LangChain • Groq • ChromaDB • Hugging Face • Streamlit
+Built with ❤️ using LangChain • Groq • FAISS • Hugging Face • Streamlit
 
 <br><br>
 
