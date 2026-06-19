@@ -169,7 +169,9 @@ with st.sidebar:
 
             with st.spinner("Creating Embeddings..."):
 
-                vector_store = create_vector_store()
+                st.session_state.vector_store = create_vector_store()
+
+                vector_store = st.session_state.vector_store
 
                 chunk_count = (
                     vector_store._collection.count()
